@@ -10,10 +10,10 @@ type Props = {
     pagesNumber: () => number
 }
 
-export const PagesControllerRender: FC<Props> = ({itemsToShow, onChangeHandler, pagesNumber}) => {
+export const PagesControllerRender: FC<Props> = ({ itemsToShow, onChangeHandler, pagesNumber }) => {
     return (
         <>
-            <ListController itemsToShow={itemsToShow}/>
+            <ListController itemsToShow={itemsToShow} />
             <Pagination count={pagesNumber()}
                 shape="rounded"
                 className={styles.pagination}

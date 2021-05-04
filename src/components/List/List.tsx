@@ -7,7 +7,6 @@ type Props ={
     itemsToShow: ListItemType[]
 }
 
-
 export const List: FC<Props> = ({ itemsToShow }) => {
 
     return (

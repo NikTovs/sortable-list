@@ -45,8 +45,8 @@ export const ListItem: FC<SortableItem> = ({ title, id, index }) => {
                         <Input placeholder={title}
                             className={styles.input}
                             onChange={onChangeInput}
-                            onKeyPress={keyPressHandler} 
-                            autoFocus={true}/>
+                            onKeyPress={keyPressHandler}
+                            autoFocus={true} />
                     }
 
                     <Button
