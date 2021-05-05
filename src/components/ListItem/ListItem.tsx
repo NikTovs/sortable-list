@@ -11,6 +11,7 @@ import { HandlersContext } from '../../context/context';
 export const ListItem: FC<SortableItem> = ({ title, id, index }) => {
 
     const [titleToggle, setToggle] = useState(true);
+    const [input, setInput] = useState('')
 
     const { deleteHandle, editHandle } = useContext(HandlersContext);
 
@@ -19,7 +20,7 @@ export const ListItem: FC<SortableItem> = ({ title, id, index }) => {
     }
 
     const onChangeInput = (event: any) => {
-        editHandle(event.target.value, id);
+        setInput(event.target.value);
     }
 
     const deleteButtonHandler = () => {
@@ -27,8 +28,10 @@ export const ListItem: FC<SortableItem> = ({ title, id, index }) => {
     }
 
     const keyPressHandler = (event: any) => {
-        if (event.key === 'Enter')
+        if (event.key === 'Enter') {
+            editHandle(input, id);
             setToggle(!titleToggle);
+        }
     }
 
     return (
